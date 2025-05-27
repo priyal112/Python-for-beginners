@@ -53,4 +53,4 @@ def game_over():
     time.sleep(2)
     pygame.quit()
 
-    quit(~)
+    quit()
