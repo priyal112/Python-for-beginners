@@ -36,3 +36,21 @@ direction = 'RIGHT'
 
 score = 0
 
+def show_score(choice, color, font, size):
+    s_font = pygame.font.SysFont(font, size)
+    s_surface = s_font.render("SCORE : ", str(score), True, color)
+    s_rect = s_surface.get_rect()
+    window.blit(s_surface, s_rect)
+
+def game_over():
+    font = pygame.font.SysFont("Roboto", 50)
+    go_surface = font.render("Your score is ", str(score), True, blue)
+    go_rect = go_surface.get_rect()
+    go_rect.midtop = (window_x / 2, window_y / 4)
+    window.blit(go_surface, go_rect)
+
+    pygame.display.flip()
+    time.sleep(2)
+    pygame.quit()
+
+    quit(~)
